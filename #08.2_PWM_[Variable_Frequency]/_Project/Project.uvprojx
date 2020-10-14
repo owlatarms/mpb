@@ -419,6 +419,11 @@
               <FilePath>..\..\Libraries\lib_tick.c</FilePath>
             </File>
             <File>
+              <FileName>lib_btn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\lib_btn.c</FilePath>
+            </File>
+            <File>
               <FileName>lib_lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\lib_lcd.c</FilePath>

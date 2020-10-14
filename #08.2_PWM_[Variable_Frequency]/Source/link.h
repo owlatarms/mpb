@@ -1,4 +1,4 @@
-﻿/******************************************************************************
+/******************************************************************************
  * @File: link.h
  * @Author: Milandr, L.
  * @Project: #08.2_PWM_[Variable_Frequency]
@@ -20,6 +20,7 @@
 // Подключение заголовков модулей проекта
 #include <lib_clk.h>
 #include <lib_tick.h>
+#include <lib_btn.h>
 #include <lib_lcd.h>
 #include <lib_sort.h>
 #include "main.h"

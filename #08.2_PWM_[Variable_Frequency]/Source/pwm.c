@@ -1,4 +1,4 @@
-﻿/******************************************************************************
+/******************************************************************************
  * @File: pwm.c
  * @Author: Milandr, L.
  * @Project: #08.2_PWM_[Variable_Frequency]
@@ -118,7 +118,6 @@ void PWM_SetFrequency(MDR_TIMER_TypeDef *MDR_TIMERx, timer_channel_t channel, ui
     frequency = SystemCoreClock / (TIMER_ARR_MIN + 1);
   }
 
-  MDR_TIMERx->CH1_CNTRL2 |= TIMER_CH_CNTRL1_SELOE_Msk;
   // Исходное вычисление периода
   arr = SystemCoreClock / (frequency * psg) - 1;
 
@@ -185,16 +184,20 @@ void HSM_Init(void)
   // Включение тактирования порта F
   MDR_RST_CLK->PER_CLOCK |= RST_CLK_PCLK_PORTF_Msk;
 
-  // Конфигурация линии PF4 (EN)
-  MDR_PORTF->OE     |=  0x00000010;  // Направление (вывод)
-  MDR_PORTF->FUNC   &= ~0x00000300;  // Функция (ввод-вывод)
-  MDR_PORTF->ANALOG |=  0x00000010;  // Режим (цифровой)
-  MDR_PORTF->PULL   &= ~0x00100010;  // Подтяжка (отключена)
-  MDR_PORTF->PD     &= ~0x00100010;  // Управление (драйвер)
-  MDR_PORTF->PWR    |=  0x00000300;  // Крутизна (высокая)
-  MDR_PORTF->GFEN   &= ~0x00000010;  // Фильтр (не используется)
+  // Конфигурация линий PF4 (EN) и PF5 (DIR)
+  MDR_PORTF->OE     |=  0x00000030;  // Направление (вывод)
+  MDR_PORTF->FUNC   &= ~0x00000F00;  // Функция (ввод-вывод)
+  MDR_PORTF->ANALOG |=  0x00000030;  // Режим (цифровой)
+  MDR_PORTF->PULL   &= ~0x00300030;  // Подтяжка (отключена)
+  MDR_PORTF->PD     &= ~0x00300030;  // Управление (драйвер)
+  MDR_PORTF->PWR    |=  0x00000F00;  // Крутизна (высокая)
+  MDR_PORTF->GFEN   &= ~0x00000030;  // Фильтр (не используется)
 
   // Включение двигателя
   // (активный уровень - низкий)
   MDR_PORTF->RXTX &= ~PORT_RXTX4_Msk;
+
+  // Установка направления вращения вала
+  // (по часовой стрелке)
+  MDR_PORTF->RXTX &= ~PORT_RXTX5_Msk;
 }
