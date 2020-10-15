@@ -55,7 +55,7 @@
           <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\Listings\</ListingPath>
+          <ListingPath>.\Objects\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -393,11 +393,6 @@
               <FileType>1</FileType>
               <FilePath>..\Source\led.c</FilePath>
             </File>
-            <File>
-              <FileName>menu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\menu.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -417,6 +412,11 @@
               <FileName>lib_lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\lib_lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>lib_menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\lib_menu.c</FilePath>
             </File>
           </Files>
         </Group>
