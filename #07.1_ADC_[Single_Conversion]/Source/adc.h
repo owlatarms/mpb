@@ -20,10 +20,9 @@
 // Константы АЦП
 #define ADC_REF 3.30F  // Опорное напряжение (в вольтах)
 #define ADC_MAX 4095   // Разрешение АЦП
-#define ADC_OFS 0.03F
 
 // Макрос вычисления напряжения
-#define ADC_TO_VLT(VAL) (ADC_REF + ADC_OFS) * (VAL) / ADC_MAX - ADC_OFS
+#define ADC_TO_VLT(VAL) (ADC_REF * (VAL) / ADC_MAX)
 
 // Кроссмодульные переменные
 extern volatile uint16_t adc_result;
