@@ -77,7 +77,7 @@ void LED_Reset(void)
 {
   // Отключение всех светодиодов
   MDR_PORTA->RXTX &= ~0x000000FF;
-  MDR_PORTB->RXTX = (MDR_PORTB->RXTX & ~PORT_JTAG_Msk) & 0x00000700;
+  MDR_PORTB->RXTX = (MDR_PORTB->RXTX & ~PORT_JTAG_Msk) & ~0x00000700;
 
   // Цикл сброса данных элементов
   for (int i = 0; i < LED_NUM; i++) {
