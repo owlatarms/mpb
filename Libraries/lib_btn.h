@@ -2,7 +2,7 @@
  * @File: lib_btn.h
  * @Author: Milandr, L.
  * @Project: Library
- * @Version: 1.1.0
+ * @Version: 1.2.0
  * @Compiler: ARM Compiler V5.06 (build 750)
  * @Microcontroller: К1986ВЕ92QI
  * @Device: Отладочная плата «МилКиТЭС»
@@ -33,13 +33,11 @@ typedef enum {
   BTN_S = 5   // Кнопка SENSE
 } btn_alias_t;
 
-// Псевдонимы состояний конечного автомата
+// Псевдонимы машины состояний
 // (Finite-State Machine, FSM)
 typedef enum {
-  BTN_FSM_PRESS_CHECK      = 0,  // «Ожидание нажатия»
-  BTN_FSM_PRESS_DEBOUNCE   = 1,  // «Защита от дребезга при нажатии»
-  BTN_FSM_RELEASE_CHECK    = 2,  // «Ожидание отпускания»
-  BTN_FSM_RELEASE_DEBOUNCE = 3   // «Защита от дребезга при отпускании»
+  BTN_FSM_PRESS   = 0,  // «Ожидание нажатия»
+  BTN_FSM_RELEASE = 1,  // «Ожидание отпускания»
 } btn_fsm_t;
 
 // Прототипы функций
