@@ -11,7 +11,7 @@
 ## Методическое обеспечение
 1. [Установка программного обеспечения](https://drive.google.com/file/d/1lKQLNNr4jDJ2haKM0E-256Ok0abDeFfq)
 1. [Глава I – Микроконтроллеры & среда разработки](https://drive.google.com/file/d/1vBmiBKCWaX-hT706VSupTihyjhxoktP0)
-1. Глава II – Порты ввода-вывода общего назначения
+1. [Глава II – Порты ввода-вывода общего назначения](https://drive.google.com/file/d/1pGj8O7PkYIQkuJmnijuduERB_UbA0sHR)
 1. Глава III – Тактирование, прерывания & таймеры
 1. Глава IV – Батарейный домен и часы реального времени
 1. Глава V – Прямой доступ к памяти
